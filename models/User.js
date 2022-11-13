@@ -1,4 +1,4 @@
-const { Schema, model, Types } = require('mongoose')
+const { Schema, model, Types, ObjectId } = require('mongoose')
 
 const User = new Schema({
    email: {
@@ -10,7 +10,7 @@ const User = new Schema({
       type: String,
       required: true,
    },
-   todos: [{ type: Types.ObjectId, ref: 'Todo' }],
+   todos: [{ type: ObjectId, ref: 'Todo' }],
 })
 
 module.exports = model('User', User)
